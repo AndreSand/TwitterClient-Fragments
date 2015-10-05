@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:padding="7dp">
+
+    <ImageView
+        android:id="@+id/ivProfileImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/ic_launcher" />
+
+    <RelativeLayout
+        android:id="@+id/rlTweetContent"
+        android:layout_toRightOf="@id/ivProfileImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:text="Andres"
+            style="BoldText"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvTweetUsername"
+            android:layout_toRightOf="@id/tvUserName"
+            style="SmallLightText"
+            android:gravity="center_vertical"
+            android:layout_alignBottom="@id/tvUserName"
+            android:layout_alignTop="@id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvTweetAge"
+            android:layout_toRightOf="@id/tvTweetUsername"
+            style="SmallLightText"
+            android:text="15m"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvBody"
+
+            android:layout_below="@id/tvUserName"
+            android:linksClickable="true"
+            android:autoLink="all"
+            android:text="Tweet tweet tweet! Tweet tweet tweet! Tweet tweet tweet! This is 140 characters of sample text. This is 140 characters of sample text. Meow."
+            android:layout_width="wrap_content"
+            android:textColorLink="#50a5e6"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnReply"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_below="@id/tvBody"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/ic_reply"/>
+        <Button
+            android:id="@+id/btnRetweet"
+            android:layout_height="20dp"
+            android:layout_width="20dp"
+            android:layout_marginLeft="80dp"
+            android:layout_toRightOf="@id/btnReply"
+            android:layout_below="@id/tvBody"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/ic_retweet"/>
+        <TextView
+            android:id="@+id/tvRetweetCount"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:gravity="center_vertical"
+            style="SmallLightText"
+            android:text="55"
+            android:layout_marginLeft="5dp"
+            android:layout_alignBottom="@id/btnRetweet"
+            android:layout_toEndOf="@id/btnRetweet"
+            android:layout_toRightOf="@+id/btnRetweet"/>
+        <Button
+            android:id="@+id/btnFavorite"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_toRightOf="@id/tvRetweetCount"
+            android:layout_below="@id/tvBody"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginLeft="80dp"
+            android:background="@drawable/ic_favorite"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
