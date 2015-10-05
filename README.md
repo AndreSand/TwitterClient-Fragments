@@ -11,7 +11,7 @@ The following **required** functionality is completed:
 * [X]	User can **sign in to Twitter** using OAuth login
 * [X]	User can **view tweets from their home timeline**
 * [X] User is displayed the username, name, and body for each tweet
-* [] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweet "8m", "7h"
+* [X] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweet "8m", "7h"
 * [X] User can view more tweets as they scroll with [infinite pagination](http://guides.codepath.com/android/Endless-Scrolling-with-AdapterViews). Number of tweets is unlimited.
 However there are [Twitter Api Rate Limits](https://dev.twitter.com/rest/public/rate-limiting) in place.
 * [X] User can **compose and post a new tweet**
@@ -42,11 +42,16 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/AndreSand/TwitterClient/blob/master/SimpleTweets1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
+
+Good video tutorial: [Video](http://courses.codepath.com/course_videos/intro_to_android/vimeo/70911522?title=video+walkthrough) 
+
+:thumbsup::thumbsup::octocat:
+
 
 Describe any challenges encountered while building the app.
 
