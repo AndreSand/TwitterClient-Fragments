@@ -1,10 +1,8 @@
 package com.codepath.apps.mysimpletweets;
 
 import android.content.Intent;
-import android.preference.PreferenceActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +12,7 @@ import android.widget.EditText;
 import com.codepath.apps.mysimpletweets.models.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
+import org.apache.http.Header;
 import org.json.JSONObject;
 
 
@@ -40,20 +39,14 @@ public class ComposeActivity extends AppCompatActivity {
 
                 client.postUpdate(tweetText.getText().toString(), new JsonHttpResponseHandler() {
 
-                    public void onSuccess(int statusCode,  JSONObject response) {
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                         // Go back to the timeline
                         Tweet tweet = Tweet.fromJSON(response);
                         Intent i = new Intent();
                         i.putExtra("tweet", tweet);
                         setResult(REQUEST_CODE, i);
                         finish();
-                    }
-
-                    //Failure
-
-                    public void onFailure(Throwable throwable, String s) {
-                        Log.i("DEBUG", throwable.toString());
-                        Log.i("DEBUG", s.toString());
                     }
                 });
 

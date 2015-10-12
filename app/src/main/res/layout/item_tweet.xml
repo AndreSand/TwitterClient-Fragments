@@ -80,7 +80,7 @@
             android:layout_height="20dp"
             android:gravity="center_vertical"
             style="SmallLightText"
-            android:text="55"
+            android:text="42"
             android:layout_marginLeft="5dp"
             android:layout_alignBottom="@id/btnRetweet"
             android:layout_toEndOf="@id/btnRetweet"

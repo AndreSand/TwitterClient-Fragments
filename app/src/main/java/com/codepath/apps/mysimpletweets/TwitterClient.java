@@ -9,6 +9,7 @@ import android.text.format.DateUtils;
 
 import com.codepath.oauth.OAuthBaseClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import java.text.ParseException;
@@ -70,13 +71,22 @@ public class TwitterClient extends OAuthBaseClient {
 		client.get(apiUrl, params, handler);
 	}
 
-	public void getUserTimeline(String username, String maxId, AsyncHttpResponseHandler handler) {
+	//API
+	//https://dev.twitter.com/rest/reference/get/statuses/user_timeline
+	public void getUserTimeline(AsyncHttpResponseHandler handler) {
 		String apiUrl = getApiUrl("statuses/user_timeline.json");
 		RequestParams params = new RequestParams();
-		params.put("max_id", maxId);
-		params.put("screen_name", username);
 		params.put("count", TWEETS_PER_PAGE);
 		client.get(apiUrl, params, handler);
+		//getClient().get(apiUrl, params, handler);
+	}
+
+	public void getUserInfo( AsyncHttpResponseHandler handler) {
+		String apiUrl = getApiUrl("account/verify_credentials.json");
+		RequestParams params = new RequestParams();
+		params.put("count", TWEETS_PER_PAGE);
+		client.get(apiUrl, params, handler);
+		//getClient().get(apiUrl, params, handler);
 	}
 
 	public void postUpdate(String tweetBody, AsyncHttpResponseHandler handler) {
@@ -105,6 +115,16 @@ public class TwitterClient extends OAuthBaseClient {
 		return relativeDate;
 	}
 
+	public void getMentionsTimeline(String maxId, JsonHttpResponseHandler handler) {
+		String apiUrl = getApiUrl("statuses/mentions_timeline.json");
+		// Can specify query string params directly or through RequestParams.
+		RequestParams params = new RequestParams();
+		params.put("count", TWEETS_PER_PAGE);
+		//Execute the request
+		client.get(apiUrl, params, handler);
+	}
+	}
+
 
 	/* 1. Define the endpoint URL with getApiUrl and pass a relative path to the endpoint
 	 * 	  i.e getApiUrl("statuses/home_timeline.json");
@@ -114,4 +134,3 @@ public class TwitterClient extends OAuthBaseClient {
 	 *    i.e client.get(apiUrl, params, handler);
 	 *    i.e client.post(apiUrl, params, handler);
 	 */
-}

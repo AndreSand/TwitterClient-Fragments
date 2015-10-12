@@ -1,23 +1,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-<item android:id="@+id/action_compose"
+    <item android:id="@+id/miProfile"
         android:orderInCategory="100"
         app:showAsAction="ifRoom"
+        android:title="Profile"
+        android:icon="@drawable/ic_profile"
+        android:onClick="onProfileView" />
 
-    android:icon="@drawable/ic_compose_tweet"
-        android:title="@string/action_compose"/>
-
-    <item android:id="@+id/action_profile"
-        android:orderInCategory="200"
+    <item android:id="@+id/miCompose"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_view_profile"
-        android:title="Profile" />
+        android:title="Profile"
+        android:orderInCategory="200"
+        android:onClick="onCompose"
+        android:icon="@drawable/ic_compose_tweet"
+        />
 
     <item android:id="@+id/action_settings"
-        android:orderInCategory="300"
         app:showAsAction="never"
-        android:title="Sign out" />
+        android:orderInCategory="300"
+        android:title="Sign Out"
+        android:onClick="onLogOut" />
 
 </menu>
